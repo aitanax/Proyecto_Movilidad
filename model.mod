@@ -4,20 +4,22 @@
 # This finds the optimal solution for maximizing Giapetto's profit
 #
 
-/* set of toys */
-set TOY;
+/* set of calls */
+set DISTRITO;
+set PARKING;
 
 /* parameters */
-param Finishing_hours {i in TOY};
-param Carpentry_hours {i in TOY};
-param Demand_toys     {i in TOY};
-param Profit_toys     {i in TOY};
+/* Parte 1*/
+param tiempo_llegada {i in PARKING, j in DISTRITO};
+param llamadas_totales {i in DISTRITOS};
+param max_llamdas_parking;
 
 /* decision variables */
-var units {i in TOY} >=0; 
+var llamadas_distrito {i in DISTRITO, j in PARKING} integer, >=0;
+
 
 /* objective function */
-maximize Profit: sum{i in TOY} Profit_toys[i]*units[i];
+minimize Timetoattemp: sum{i in DISTRITO, j in PARKING}(llamadas_distrito[i,j]);
 
 /* Constraints */
 s.t. Fin_hours : sum{i in TOY} Finishing_hours[i]*units[i] <= 100;

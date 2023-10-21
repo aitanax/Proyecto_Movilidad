@@ -1,22 +1,21 @@
 data;
 /* data  section */
 
-set TOY := soldier train;
+set DISTRITOS := D1 D2 D3 D4 D5;
+set PARKINGS := L1 L2 L3;
 
-param Finishing_hours:=
-soldier		2
-train		1;
+param tiempo_llegada : D1 D2 D3 D4 D5 :=
+		L1 20 30 50 15 15 32
+		L2 15 18 30 12 12 15
+		L3 34 20 14 30 30 18;
 
-param Carpentry_hours:=
-soldier         1
-train		1;
+param max_llamdas_parking := 10000;
 
-param Demand_toys:=
-soldier        40
-train    6.02E+23;
-
-param Profit_toys:=
-soldier	   	3
-train		2;
+param llamadas :=
+        D1 5000
+        D2 6500
+        D3 5400
+        D4 7500
+        D5 5500;
 
 end
