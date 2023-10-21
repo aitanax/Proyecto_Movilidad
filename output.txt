@@ -1,60 +1,71 @@
 Problem:    model
-Rows:       10
+Rows:       21
 Columns:    15 (15 integer, 0 binary)
-Non-zeros:  60
+Non-zeros:  135
 Status:     INTEGER OPTIMAL
-Objective:  Timetoattemp = 0 (MINimum)
+Objective:  Timetoattemp = 484800 (MINimum)
 
    No.   Row name        Activity     Lower bound   Upper bound
 ------ ------------    ------------- ------------- -------------
-     1 Timetoattemp                0                             
-     2 limitellamadasL1[L1]
-                                   0                       10000 
-     3 limitellamadasL1[L2]
-                                   0                       10000 
-     4 limitellamadasL1[L3]
-                                   0                       10000 
-     5 limitellamadasL2[L1]
-                                   0                       10000 
-     6 limitellamadasL2[L2]
-                                   0                       10000 
-     7 limitellamadasL2[L3]
-                                   0                       10000 
-     8 limitellamadasL3[L1]
-                                   0                       10000 
-     9 limitellamadasL3[L2]
-                                   0                       10000 
-    10 limitellamadasL3[L3]
-                                   0                       10000 
+     1 Timetoattemp           484800                             
+     2 limiteLlamadasL1[L1]
+                                9950                       10000 
+     3 limiteLlamadasL1[L2]
+                                9950                       10000 
+     4 limiteLlamadasL1[L3]
+                                9950                       10000 
+     5 limiteLlamadasL2[L1]
+                               10000                       10000 
+     6 limiteLlamadasL2[L2]
+                               10000                       10000 
+     7 limiteLlamadasL2[L3]
+                               10000                       10000 
+     8 limiteLlamadasL3[L1]
+                               10000                       10000 
+     9 limiteLlamadasL3[L2]
+                               10000                       10000 
+    10 limiteLlamadasL3[L3]
+                               10000                       10000 
+    11 L1mnrL2                 -5050                          -0 
+    12 L1mnrL3                 -5050                          -0 
+    13 L2mnrL1                 -4925                          -0 
+    14 L2mnrL3                 -5000                          -0 
+    15 L3mnrL1                 -4925                          -0 
+    16 L3mnrL2                 -5000                          -0 
+    17 totalD1                  5050          5050             = 
+    18 totalD2                  6500          6500             = 
+    19 totalD3                  5400          5400             = 
+    20 totalD4                  7500          7500             = 
+    21 totalD5                  5500          5500             = 
 
    No. Column name       Activity     Lower bound   Upper bound
 ------ ------------    ------------- ------------- -------------
      1 tiempo_total_atencion[L1,D1]
-                    *              0             0               
+                    *           2450             0               
      2 tiempo_total_atencion[L1,D2]
                     *              0             0               
      3 tiempo_total_atencion[L1,D3]
                     *              0             0               
      4 tiempo_total_atencion[L1,D4]
-                    *              0             0               
+                    *           7500             0               
      5 tiempo_total_atencion[L1,D5]
                     *              0             0               
      6 tiempo_total_atencion[L2,D1]
-                    *              0             0               
+                    *           2600             0               
      7 tiempo_total_atencion[L2,D2]
-                    *              0             0               
+                    *           1900             0               
      8 tiempo_total_atencion[L2,D3]
                     *              0             0               
      9 tiempo_total_atencion[L2,D4]
                     *              0             0               
     10 tiempo_total_atencion[L2,D5]
-                    *              0             0               
+                    *           5500             0               
     11 tiempo_total_atencion[L3,D1]
                     *              0             0               
     12 tiempo_total_atencion[L3,D2]
-                    *              0             0               
+                    *           4600             0               
     13 tiempo_total_atencion[L3,D3]
-                    *              0             0               
+                    *           5400             0               
     14 tiempo_total_atencion[L3,D4]
                     *              0             0               
     15 tiempo_total_atencion[L3,D5]
