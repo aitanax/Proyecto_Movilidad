@@ -1,39 +1,72 @@
 Problem:    model
-Rows:       5
-Columns:    2
-Non-zeros:  8
-Status:     OPTIMAL
-Objective:  Profit = 180 (MAXimum)
+Rows:       10
+Columns:    15 (15 integer, 0 binary)
+Non-zeros:  60
+Status:     INTEGER OPTIMAL
+Objective:  Timetoattemp = 0 (MINimum)
 
-   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
------- ------------ -- ------------- ------------- ------------- -------------
-     1 Profit       B            180                             
-     2 Fin_hours    NU           100                         100             1 
-     3 Carp_hours   NU            80                          80             1 
-     4 Dem[soldier] B             20                          40 
-     5 Dem[train]   B             60                    6.02e+23 
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 Timetoattemp                0                             
+     2 limitellamadasL1[L1]
+                                   0                       10000 
+     3 limitellamadasL1[L2]
+                                   0                       10000 
+     4 limitellamadasL1[L3]
+                                   0                       10000 
+     5 limitellamadasL2[L1]
+                                   0                       10000 
+     6 limitellamadasL2[L2]
+                                   0                       10000 
+     7 limitellamadasL2[L3]
+                                   0                       10000 
+     8 limitellamadasL3[L1]
+                                   0                       10000 
+     9 limitellamadasL3[L2]
+                                   0                       10000 
+    10 limitellamadasL3[L3]
+                                   0                       10000 
 
-   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
------- ------------ -- ------------- ------------- ------------- -------------
-     1 units[soldier]
-                    B             20             0               
-     2 units[train] B             60             0               
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 tiempo_total_atencion[L1,D1]
+                    *              0             0               
+     2 tiempo_total_atencion[L1,D2]
+                    *              0             0               
+     3 tiempo_total_atencion[L1,D3]
+                    *              0             0               
+     4 tiempo_total_atencion[L1,D4]
+                    *              0             0               
+     5 tiempo_total_atencion[L1,D5]
+                    *              0             0               
+     6 tiempo_total_atencion[L2,D1]
+                    *              0             0               
+     7 tiempo_total_atencion[L2,D2]
+                    *              0             0               
+     8 tiempo_total_atencion[L2,D3]
+                    *              0             0               
+     9 tiempo_total_atencion[L2,D4]
+                    *              0             0               
+    10 tiempo_total_atencion[L2,D5]
+                    *              0             0               
+    11 tiempo_total_atencion[L3,D1]
+                    *              0             0               
+    12 tiempo_total_atencion[L3,D2]
+                    *              0             0               
+    13 tiempo_total_atencion[L3,D3]
+                    *              0             0               
+    14 tiempo_total_atencion[L3,D4]
+                    *              0             0               
+    15 tiempo_total_atencion[L3,D5]
+                    *              0             0               
 
-Karush-Kuhn-Tucker optimality conditions:
+Integer feasibility conditions:
 
 KKT.PE: max.abs.err = 0.00e+00 on row 0
         max.rel.err = 0.00e+00 on row 0
         High quality
 
 KKT.PB: max.abs.err = 0.00e+00 on row 0
-        max.rel.err = 0.00e+00 on row 0
-        High quality
-
-KKT.DE: max.abs.err = 0.00e+00 on column 0
-        max.rel.err = 0.00e+00 on column 0
-        High quality
-
-KKT.DB: max.abs.err = 0.00e+00 on row 0
         max.rel.err = 0.00e+00 on row 0
         High quality
 

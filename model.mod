@@ -11,19 +11,30 @@ set PARKING;
 /* parameters */
 /* Parte 1*/
 param tiempo_llegada {i in PARKING, j in DISTRITO};
-param llamadas_totales {i in DISTRITOS};
-param max_llamdas_parking;
+param llamadas_totales {i in DISTRITO};
+param max_llamadas_parking;
 
 /* decision variables */
-var llamadas_distrito {i in DISTRITO, j in PARKING} integer, >=0;
+var tiempo_total_atencion{i in PARKING, j in DISTRITO} integer, >=0;
 
 
 /* objective function */
-minimize Timetoattemp: sum{i in DISTRITO, j in PARKING}(llamadas_distrito[i,j]);
+minimize Timetoattemp: sum{i in PARKING, j in DISTRITO}(tiempo_total_atencion[i,j]*tiempo_llegada[i,j]);
 
-/* Constraints */
-s.t. Fin_hours : sum{i in TOY} Finishing_hours[i]*units[i] <= 100;
-s.t. Carp_hours : sum{i in TOY} Carpentry_hours[i]*units[i] <= 80;
-s.t. Dem {i in TOY} : units[i] <= Demand_toys[i];
+/* Restricciones */
+/*Parte 1*/
+
+/*Un parking de ambulancias no puede atender más de un determinado número de llamadas en
+total, que en este caso es 10.000 llamadas.*/
+s.t. limitellamadasL1{i in PARKING} : sum{j in DISTRITO} tiempo_total_atencion['L1', j] <= max_llamadas_parking;
+s.t. limitellamadasL2{i in PARKING} : sum{j in DISTRITO} tiempo_total_atencion['L2', j] <= max_llamadas_parking;
+s.t. limitellamadasL3{i in PARKING} : sum{j in DISTRITO} tiempo_total_atencion['L3', j] <= max_llamadas_parking;
+
+/*Se debe garantizar que una ambulancia no tardará nunca más de 35 minutos en llegar al lugar
+donde se produce la emergencia */
+
+/* Para balancear el esfuerzo, el número total de llamadas asignado a un parking no puede exceder
+en más del 50% el número total de llamadas asignado a cualquier otro parking de ambulancias. */
+
 
 end;
