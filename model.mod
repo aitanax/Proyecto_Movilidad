@@ -1,7 +1,7 @@
 #
-# Giapetto's problem
+# Practica Modelado 1
 #
-# This finds the optimal solution for maximizing Giapetto's profit
+# This finds the optimal solution for minizing Tiempo de Atencion
 #
 
 /* set of calls */
@@ -31,11 +31,10 @@ s.t. limiteLlamadasL2{i in PARKING} : sum{j in DISTRITO} tiempo_total_atencion['
 s.t. limiteLlamadasL3{i in PARKING} : sum{j in DISTRITO} tiempo_total_atencion['L3', j] <= max_llamadas_parking;
 
 /*Se debe garantizar que una ambulancia no tardará nunca más de 35 minutos en llegar al lugar
-donde se produce la emergencia 
-s.t. tiempoEmergencia */
+donde se produce la emergencia */
+s.t. tiempoEmergencia{i in PARKING, j in DISTRITO}: tiempo_llegada[i, j] * tiempo_total_atencion[i, j] <= 35 * tiempo_total_atencion[i, j];
 
-/* Para balancear el esfuerzo, el número total de llamadas asignado a un parking no puede exceder
-en más del 50% el número total de llamadas asignado a cualquier otro parking de ambulancias. */
+/* Para balancear el esfuerzo, el número total de llamadas asignado a un parking no puede exceder en más del 50% el número total de llamadas asignado a cualquier otro parking de ambulancias. */
 
 s.t. L1mnrL2: sum{j in DISTRITO} tiempo_total_atencion['L1',j] <= 1.5 * sum{j in DISTRITO} tiempo_total_atencion['L2',j];
 s.t. L1mnrL3: sum{j in DISTRITO} tiempo_total_atencion['L1',j] <= 1.5 * sum{j in DISTRITO} tiempo_total_atencion['L3',j];
@@ -51,4 +50,5 @@ s.t. totalD2: sum{i in PARKING} tiempo_total_atencion[i, 'D2'] = llamadas_totale
 s.t. totalD3: sum{i in PARKING} tiempo_total_atencion[i, 'D3'] = llamadas_totales['D3'];
 s.t. totalD4: sum{i in PARKING} tiempo_total_atencion[i, 'D4'] = llamadas_totales['D4'];
 s.t. totalD5: sum{i in PARKING} tiempo_total_atencion[i, 'D5'] = llamadas_totales['D5'];
+
 end;
