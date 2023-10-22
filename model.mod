@@ -77,13 +77,4 @@ solve;
 display tiempo_total_atencion;
 
 
-
-
-s.t. tiempoEmergencia{i in PARKING, j in DISTRITO}: tiempo_llegada[i, j] * tiempo_total_atencion[i, j] <= 35 * tiempo_total_atencion[i, j];
-
-s.t. LmnrL{i in PARKING, k in PARKING: k != i}: sum{j in DISTRITO} tiempo_total_atencion[i,j] <= 1.5 * sum{j in DISTRITO} tiempo_total_atencion[k,j];
-
-
-
-
 end;
