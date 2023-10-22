@@ -99,11 +99,4 @@ display tiempo_total_atencion, tiempo_total_atencion_nueva, establecer_nuevo;
 
 
 
-
-
-
-
-
-
-
 end
