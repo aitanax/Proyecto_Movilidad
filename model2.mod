@@ -59,8 +59,5 @@ s.t. LxmnrLx{i in PARKING, k in PARKING: k <> i}: sum{j in DISTRITO} tiempo_tota
 s.t. totalD {j in DISTRITO}: sum{i in PARKING} tiempo_total_atencion[i, j] = llamadas_totales[j];
 
 /* ------ Parte 2 ------ */
-s.t. limiteLlamadasLocalizacionSeleccionada{i in PARKING, l in localizaciones_seleccionadas}:
-    sum {d in DISTRITO : <l, d> in LOCALIZACION_DISTRITO_SELECCIONADO} llamadas_totales[d] * x[i, d] <= 1.5 * sum {k in PARKING} sum {d in DISTRITO : <l, d> in LOCALIZACION_DISTRITO_SELECCIONADO} llamadas_totales[d] * x[k, d];
-
 
 end
