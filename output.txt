@@ -8,11 +8,11 @@ Objective:  Timetoattemp = 483800 (MINimum)
    No.   Row name        Activity     Lower bound   Upper bound
 ------ ------------    ------------- ------------- -------------
      1 Timetoattemp           483800                             
-     2 limiteLlamadasL1
+     2 limiteLlamadasL1[L1]
                                 9900                       10000 
-     3 limiteLlamadasL2
+     3 limiteLlamadasL1[L2]
                                10000                       10000 
-     4 limiteLlamadasL3
+     4 limiteLlamadasL1[L3]
                                10000                       10000 
      5 tiempoEmergencia[L1,D1]
                               -36000                          -0 
