@@ -73,8 +73,39 @@ s.t. LmnrL{i in PARKING, k in PARKING: k != i}: sum{j in DISTRITO} tiempo_total_
 s.t. totalD {j in DISTRITO}: sum{i in PARKING} tiempo_total_atencion[i, j] = llamadas_totales[j];
 
 solve;
-
 display tiempo_total_atencion;
+
+
+
+
+/* ----------------------------------------------------------------- PARTE 2 - 2 */
+param tiempo_llegada{i in PARKING, j in DISTRITO};
+param tiempo_llegada_nueva{k in NEW_LOCATIONS, j in DISTRITO};
+param llamadas_totales{j in DISTRITO};
+param max_llamadas_parking;
+param coste_fijo{NEW_LOCATIONS};  # Coste fijo de establecer nuevos estacionamientos
+
+var tiempo_total_atencion{i in PARKING, j in DISTRITO} integer >= 0;
+var tiempo_total_atencion_nueva{k in NEW_LOCATIONS, j in DISTRITO} integer >= 0;
+var establecer_nuevo{k in NEW_LOCATIONS} binary;  # Variable binaria que indica si se establece un nuevo estacionamiento
+
+minimize CosteTotal: sum{i in PARKING, j in DISTRITO}(tiempo_total_atencion[i,j] * tiempo_llegada[i,j]) + 
+                     sum{k in NEW_LOCATIONS, j in DISTRITO}(tiempo_total_atencion_nueva[k,j] * tiempo_llegada_nueva[k,j]) +
+                     sum{k in NEW_LOCATIONS}(coste_fijo[k] * establecer_nuevo[k]);
+
+s.t. limiteLlamadasL{i in PARKING}: sum{j in DISTRITO} tiempo_total_atencion[i, j] <= max_llamadas_parking;
+s.t. tiempoEmergencia{i in PARKING, j in DISTRITO}: tiempo_llegada[i, j] * tiempo_total_atencion[i, j] <= 35 * tiempo_total_atencion[i, j];
+
+s.t. LmnrL{i in PARKING, k in PARKING: k != i}: sum{j in DISTRITO} tiempo_total_atencion[i,j] <= 1.5 * sum{j in DISTRITO} tiempo_total_atencion[k,j];
+
+s.t. totalD{j in DISTRITO}: sum{i in PARKING} tiempo_total_atencion[i, j] = llamadas_totales[j];
+
+s.t. establecer_minimo{k in NEW_LOCATIONS}: establecer_nuevo[k] >= 0.1;  # Al menos 10% de las llamadas
+
+s.t. distribuir_75{j in DISTRITO: llamadas_totales[j] >= 7500}: sum{k in NEW_LOCATIONS}(tiempo_total_atencion_nueva[k, j]) >= 0.1 * llamadas_totales[j];
+
+solve;
+display tiempo_total_atencion, tiempo_total_atencion_nueva, establecer_nuevo;
 
 
 end;
