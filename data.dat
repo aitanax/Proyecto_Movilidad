@@ -1,8 +1,10 @@
 data;
-/* data  section */
+
+/* DATA SECTION */
 
 set DISTRITO := D1 D2 D3 D4 D5;
 set PARKING := L1 L2 L3;
+
 
 param tiempo_llegada : D1 D2 D3 D4 D5 :=
 		L1 20 30 50 15 32
