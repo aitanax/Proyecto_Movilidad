@@ -14,8 +14,8 @@ param tiempo_llegada_nueva{parking in PARKINGS, distrito in DISTRITOS};         
 param llamadas_totales{distrito in DISTRITOS};                                                                                                      # Total de llamadas en cada distrito
 param max_llamadas_parking;                                                                                                                         # Máximo de llamadas que un parking puede atender
 param coste_gasolina;                                                                                                                               # Costo de la gasolina
-param porcentaje_min_llamadas;                                                                                                                      # Porcentaje mínimo de llamadas a atender
-param porcentaje_max_llamadas;                                                                                                                      # Porcentaje máximo de llamadas a atender
+param contrains8;                                                                                                                                   # Porcentaje mínimo de llamadas a atender
+param contrains3;                                                                                                                      # Porcentaje máximo de llamadas a atender
 param porcentaje_distribucion;                                                                                                                      # Porcentaje de la distrucción
 param coste_fijo;                                                                                                                                   # Costo fijo
 param M;                                                                                                                                            # Un valor grande (infinito)
@@ -23,10 +23,10 @@ param minutos_de_atencion;                                                      
 
 /* --------------------------------------------------------------------------------------- DECISION VARIABLES --------------------------------------------------------------------------------------- */
 
-var tiempo_total_atencion_nueva{parking in PARKINGS, distrito in DISTRITOS} integer >= 0;                                                             # Tiempo de atención en una nueva ubicación
+var tiempo_total_atencion_nueva{parking in PARKINGS, distrito in DISTRITOS} integer >= 0;                                                            # Tiempo de atención en una nueva ubicación
 var llamadas_asignadas{parking in PARKINGS} binary;                                                                                                  # Variable binaria: 1 si el parking tiene llamadas, 0 si no
 var atencion_llamada{distrito in DISTRITOS} binary;                                                                                                  # Variable binaria: 1 si se atienden llamadas en el distrito, 0 si no
-var distribucion{parking in PARKINGS, distrito in DISTRITOS} binary;                                                                                  # Variable binaria: 1 si se distribuyen llamadas al parking y distrito, 0 si no
+var distribucion{parking in PARKINGS, distrito in DISTRITOS} binary;                                                                                 # Variable binaria: 1 si se distribuyen llamadas al parking y distrito, 0 si no
 
 /* --------------------------------------------------------------------------------------- OBJETIVE FUNCTION --------------------------------------------------------------------------------------- */
 
@@ -54,7 +54,7 @@ minimize CosteTotal:
 # 3: 
 
     # Para balancear el esfuerzo, el número total de llamadas asignado a un parking no puede exceder en más del 50% el número total de llamadas asignado a cualquier otro parking de ambulancias:
-    s.t. PmnrP{parking1 in PARKINGS, parking2 in PARKINGS: parking2 <> parking1}: sum{distrito in DISTRITOS} tiempo_total_atencion_nueva[parking1, distrito] <= porcentaje_max_llamadas * sum{distrito in DISTRITOS} tiempo_total_atencion_nueva[parking2, distrito] + (1 - llamadas_asignadas[parking2]) * M;
+    s.t. PmnrP{parking1 in PARKINGS, parking2 in PARKINGS: parking2 <> parking1}: sum{distrito in DISTRITOS} tiempo_total_atencion_nueva[parking1, distrito] <= contrains3 * sum{distrito in DISTRITOS} tiempo_total_atencion_nueva[parking2, distrito] + (1 - llamadas_asignadas[parking2]) * M;
 
 # 4:
 
@@ -84,6 +84,6 @@ minimize CosteTotal:
 # 8: 
 
     # Si un parking de ambulancias cubre alguna llamada de un distrito, no puede cubrir menos del 10% del total de las llamadas de ese distrito:
-    s.t. establecer_minimo{parking in PARKINGS, distrito in DISTRITOS}: tiempo_total_atencion_nueva[parking, distrito] >= porcentaje_min_llamadas*llamadas_totales[distrito]*distribucion[parking, distrito];
+    s.t. establecer_minimo{parking in PARKINGS, distrito in DISTRITOS}: tiempo_total_atencion_nueva[parking, distrito] >= contrains8*llamadas_totales[distrito]*distribucion[parking, distrito];
 
 end;

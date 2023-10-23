@@ -25,22 +25,13 @@ param llamadas_totales :=
     D5 5500;
 
 param max_llamadas_parking := 10000;
-
 param coste_gasolina := 2;
-
-param porcentaje_min_llamadas := 0.1;
-
-param porcentaje_max_llamadas := 1.5;
-
+param contrains8 := 0.1;
+param contrains3 := 1.5;
 param porcentaje_distribucion := 0.75;
-
 param coste_fijo := 50000;
-
 param M := 1000000;
-
 param minutos_de_atencion := 35;
-
-
 
 end
 ;
