@@ -1,25 +1,21 @@
 data;
 /* data  section */
 
-set DISTRITO := D1 D2 D3 D4 D5;
-set PARKING := L1 L2 L3;
+/* --------------------------------------------------------------------------------------------- SETS --------------------------------------------------------------------------------------------- */
+
+set DISTRITOS := D1 D2 D3 D4 D5;
+set PARKINGS := L1 L2 L3 L4 L5 L6;
 set NUEVAS_LOCALIZACIONES := L4 L5 L6;
 
-param coste_gasolina := 2;
-
-param tiempo_llegada : D1 D2 D3 D4 D5 :=
-    L1 20 30 50 15 32
-    L2 15 18 30 12 15
-    L3 34 20 14 30 18;
+/* ------------------------------------------------------------------------------------------ PARAMETERS ------------------------------------------------------------------------------------------- */
 
 param tiempo_llegada_nueva : D1 D2 D3 D4 D5 :=
-    L4 12 15 40 10 20
-    L5 20 18 20 17 10
-    L6 55 35 20 30 30;
-
-param max_llamadas_parking := 10000;
-
-param coste_fijo := 50000;
+        L1 20 30 50 15 32
+        L2 15 18 30 12 15
+        L3 34 20 14 30 18
+        L4 12 15 40 10 20
+        L5 20 18 20 17 10
+        L6 55 35 20 30 30;
 
 param llamadas_totales :=
     D1 5000
@@ -27,6 +23,15 @@ param llamadas_totales :=
     D3 5400
     D4 7500
     D5 5500;
+
+param max_llamadas_parking := 10000;
+param coste_gasolina := 2;
+param contrains8 := 0.1;
+param contrains3 := 1.5;
+param porcentaje_distribucion := 0.75;
+param coste_fijo := 50000;
+param M := 1000000;
+param minutos_de_atencion := 35;
 
 end
 ;

@@ -1,123 +1,441 @@
 Problem:    model2
-Rows:       43
-Columns:    38 (38 integer, 8 binary)
-Non-zeros:  166
+Rows:       214
+Columns:    71 (71 integer, 41 binary)
+Non-zeros:  954
 Status:     INTEGER OPTIMAL
-Objective:  CosteTotal = 1196700 (MINimum)
+Objective:  CosteTotal = 872030 (MINimum)
 
    No.   Row name        Activity     Lower bound   Upper bound
 ------ ------------    ------------- ------------- -------------
-     1 CosteTotal         1.1967e+06                             
-     2 limiteLlamadasL[L1]
-                                9900                       10000 
-     3 limiteLlamadasL[L2]
-                               10000                       10000 
-     4 limiteLlamadasL[L3]
-                               10000                       10000 
-     5 tiempoEmergencia[L1,D1]
-                              -36000                          -0 
-     6 tiempoEmergencia[L1,D2]
+     1 CosteTotal             872030                             
+     2 limiteLlamadas[L1]
+                                   0                       10000 
+     3 limiteLlamadas[L2]
+                                6750                       10000 
+     4 limiteLlamadas[L3]
+                                6614                       10000 
+     5 limiteLlamadas[L4]
+                                9921                       10000 
+     6 limiteLlamadas[L5]
+                                6615                       10000 
+     7 limiteLlamadas[L6]
+                                   0                       10000 
+     8 tiempoEmergencia[L1,D1]
                                    0                          -0 
-     7 tiempoEmergencia[L1,D3]
+     9 tiempoEmergencia[L1,D2]
                                    0                          -0 
-     8 tiempoEmergencia[L1,D4]
-                             -150000                          -0 
-     9 tiempoEmergencia[L1,D5]
+    10 tiempoEmergencia[L1,D3]
                                    0                          -0 
-    10 tiempoEmergencia[L2,D1]
-                              -52000                          -0 
-    11 tiempoEmergencia[L2,D2]
-                              -32300                          -0 
-    12 tiempoEmergencia[L2,D3]
+    11 tiempoEmergencia[L1,D4]
                                    0                          -0 
-    13 tiempoEmergencia[L2,D4]
+    12 tiempoEmergencia[L1,D5]
                                    0                          -0 
-    14 tiempoEmergencia[L2,D5]
-                             -110000                          -0 
-    15 tiempoEmergencia[L3,D1]
+    13 tiempoEmergencia[L2,D1]
                                    0                          -0 
-    16 tiempoEmergencia[L3,D2]
-                              -69000                          -0 
-    17 tiempoEmergencia[L3,D3]
+    14 tiempoEmergencia[L2,D2]
+                                   0                          -0 
+    15 tiempoEmergencia[L2,D3]
+                                   0                          -0 
+    16 tiempoEmergencia[L2,D4]
+                             -155250                          -0 
+    17 tiempoEmergencia[L2,D5]
+                                   0                          -0 
+    18 tiempoEmergencia[L3,D1]
+                                   0                          -0 
+    19 tiempoEmergencia[L3,D2]
+                              -18210                          -0 
+    20 tiempoEmergencia[L3,D3]
                              -113400                          -0 
-    18 tiempoEmergencia[L3,D4]
+    21 tiempoEmergencia[L3,D4]
                                    0                          -0 
-    19 tiempoEmergencia[L3,D5]
+    22 tiempoEmergencia[L3,D5]
                                    0                          -0 
-    20 LmnrL[L1,L2]            -5100                          -0 
-    21 LmnrL[L1,L3]            -5100                          -0 
-    22 LmnrL[L2,L1]            -4850                          -0 
-    23 LmnrL[L2,L3]            -5000                          -0 
-    24 LmnrL[L3,L1]            -4850                          -0 
-    25 LmnrL[L3,L2]            -5000                          -0 
-    26 totalD[D1]               5000          5000             = 
-    27 totalD[D2]               6500          6500             = 
-    28 totalD[D3]               5400          5400             = 
-    29 totalD[D4]               7500          7500             = 
-    30 totalD[D5]               5500          5500             = 
-    31 establecer_minimo[L4]
-                                   1           0.1               
-    32 establecer_minimo[L5]
-                                   1           0.1               
-    33 establecer_minimo[L6]
-                                   1           0.1               
-    34 activar_y[D1]
-                                   1             1               
-    35 activar_y[D2]
-                                   1             1               
-    36 activar_y[D3]
-                                   1             1               
-    37 activar_y[D4]
-                                   1             1               
-    38 activar_y[D5]
-                                   1             1               
-    39 distribuir_75[D1]
+    23 tiempoEmergencia[L4,D1]
+                             -115000                          -0 
+    24 tiempoEmergencia[L4,D2]
+                              -83420                          -0 
+    25 tiempoEmergencia[L4,D3]
+                                   0                          -0 
+    26 tiempoEmergencia[L4,D4]
+                              -18750                          -0 
+    27 tiempoEmergencia[L4,D5]
+                                   0                          -0 
+    28 tiempoEmergencia[L5,D1]
+                                   0                          -0 
+    29 tiempoEmergencia[L5,D2]
+                              -18955                          -0 
+    30 tiempoEmergencia[L5,D3]
+                                   0                          -0 
+    31 tiempoEmergencia[L5,D4]
+                                   0                          -0 
+    32 tiempoEmergencia[L5,D5]
+                             -137500                          -0 
+    33 tiempoEmergencia[L6,D1]
+                                   0                          -0 
+    34 tiempoEmergencia[L6,D2]
+                                   0                          -0 
+    35 tiempoEmergencia[L6,D3]
+                                   0                          -0 
+    36 tiempoEmergencia[L6,D4]
+                                   0                          -0 
+    37 tiempoEmergencia[L6,D5]
+                                   0                          -0 
+    38 PmnrP[L1,L2]           989875                       1e+06 
+    39 PmnrP[L1,L3]           990079                       1e+06 
+    40 PmnrP[L1,L4]           985118                       1e+06 
+    41 PmnrP[L1,L5]           990078                       1e+06 
+    42 PmnrP[L1,L6]                0                       1e+06 
+    43 PmnrP[L2,L1]             6750                       1e+06 
+    44 PmnrP[L2,L3]           996829                       1e+06 
+    45 PmnrP[L2,L4]           991868                       1e+06 
+    46 PmnrP[L2,L5]           996828                       1e+06 
+    47 PmnrP[L2,L6]             6750                       1e+06 
+    48 PmnrP[L3,L1]             6614                       1e+06 
+    49 PmnrP[L3,L2]           996489                       1e+06 
+    50 PmnrP[L3,L4]           991732                       1e+06 
+    51 PmnrP[L3,L5]           996692                       1e+06 
+    52 PmnrP[L3,L6]             6614                       1e+06 
+    53 PmnrP[L4,L1]             9921                       1e+06 
+    54 PmnrP[L4,L2]           999796                       1e+06 
+    55 PmnrP[L4,L3]            1e+06                       1e+06 
+    56 PmnrP[L4,L5]           999998                       1e+06 
+    57 PmnrP[L4,L6]             9921                       1e+06 
+    58 PmnrP[L5,L1]             6615                       1e+06 
+    59 PmnrP[L5,L2]           996490                       1e+06 
+    60 PmnrP[L5,L3]           996694                       1e+06 
+    61 PmnrP[L5,L4]           991734                       1e+06 
+    62 PmnrP[L5,L6]             6615                       1e+06 
+    63 PmnrP[L6,L1]                0                       1e+06 
+    64 PmnrP[L6,L2]           989875                       1e+06 
+    65 PmnrP[L6,L3]           990079                       1e+06 
+    66 PmnrP[L6,L4]           985118                       1e+06 
+    67 PmnrP[L6,L5]           990078                       1e+06 
+    68 totalD[D1]               5000          5000             = 
+    69 totalD[D2]               6500          6500             = 
+    70 totalD[D3]               5400          5400             = 
+    71 totalD[D4]               7500          7500             = 
+    72 totalD[D5]               5500          5500             = 
+    73 parking_en_uso[L1]
+                                   0                          -0 
+    74 parking_en_uso[L2]
+                             -993250                          -0 
+    75 parking_en_uso[L3]
+                             -993386                          -0 
+    76 parking_en_uso[L4]
+                             -990079                          -0 
+    77 parking_en_uso[L5]
+                             -993385                          -0 
+    78 parking_en_uso[L6]
+                                   0                          -0 
+    79 parking_en_uso2[L1]
+                                   0        -1e+06               
+    80 parking_en_uso2[L2]
+                             -993250        -1e+06               
+    81 parking_en_uso2[L3]
+                             -993386        -1e+06               
+    82 parking_en_uso2[L4]
+                             -990079        -1e+06               
+    83 parking_en_uso2[L5]
+                             -993385        -1e+06               
+    84 parking_en_uso2[L6]
+                                   0        -1e+06               
+    85 max_75[L1,D1]
+                               -5000                      999999 
+    86 max_75[L1,D2]
+                               -6500                      999999 
+    87 max_75[L1,D3]
+                               -5400                      999999 
+    88 max_75[L1,D4]
+                              992500                      999999 
+    89 max_75[L1,D5]
+                               -5500                      999999 
+    90 max_75[L2,D1]
+                               -5000                      999999 
+    91 max_75[L2,D2]
+                               -6500                      999999 
+    92 max_75[L2,D3]
+                               -5400                      999999 
+    93 max_75[L2,D4]
+                              999250                      999999 
+    94 max_75[L2,D5]
+                               -5500                      999999 
+    95 max_75[L3,D1]
+                               -5000                      999999 
+    96 max_75[L3,D2]
+                               -5286                      999999 
+    97 max_75[L3,D3]
+                                   0                      999999 
+    98 max_75[L3,D4]
+                              992500                      999999 
+    99 max_75[L3,D5]
+                               -5500                      999999 
+   100 max_75[L4,D1]
+                                   0                      999999 
+   101 max_75[L4,D2]
+                               -2329                      999999 
+   102 max_75[L4,D3]
+                               -5400                      999999 
+   103 max_75[L4,D4]
+                              993250                      999999 
+   104 max_75[L4,D5]
+                               -5500                      999999 
+   105 max_75[L5,D1]
+                               -5000                      999999 
+   106 max_75[L5,D2]
+                               -5385                      999999 
+   107 max_75[L5,D3]
+                               -5400                      999999 
+   108 max_75[L5,D4]
+                              992500                      999999 
+   109 max_75[L5,D5]
+                                   0                      999999 
+   110 max_75[L6,D1]
+                               -5000                      999999 
+   111 max_75[L6,D2]
+                               -6500                      999999 
+   112 max_75[L6,D3]
+                               -5400                      999999 
+   113 max_75[L6,D4]
+                              992500                      999999 
+   114 max_75[L6,D5]
+                               -5500                      999999 
+   115 binaria_75_parte1[D1]
+                                5000       -992500               
+   116 binaria_75_parte1[D2]
+                                6500       -992500               
+   117 binaria_75_parte1[D3]
+                                5400       -992500               
+   118 binaria_75_parte1[D4]
+                             -992500       -992500               
+   119 binaria_75_parte1[D5]
+                                5500       -992500               
+   120 binaria_75_parte2[D1]
+                                5000                        7499 
+   121 binaria_75_parte2[D2]
+                                6500                        7499 
+   122 binaria_75_parte2[D3]
+                                5400                        7499 
+   123 binaria_75_parte2[D4]
+                             -992500                        7499 
+   124 binaria_75_parte2[D5]
+                                5500                        7499 
+   125 distribuir_llamadas[L1,D1]
+                                   0        -1e+06               
+   126 distribuir_llamadas[L1,D2]
+                                   0        -1e+06               
+   127 distribuir_llamadas[L1,D3]
+                                   0        -1e+06               
+   128 distribuir_llamadas[L1,D4]
+                                   0        -1e+06               
+   129 distribuir_llamadas[L1,D5]
+                                   0        -1e+06               
+   130 distribuir_llamadas[L2,D1]
+                                   0        -1e+06               
+   131 distribuir_llamadas[L2,D2]
+                                   0        -1e+06               
+   132 distribuir_llamadas[L2,D3]
+                                   0        -1e+06               
+   133 distribuir_llamadas[L2,D4]
+                             -993250        -1e+06               
+   134 distribuir_llamadas[L2,D5]
+                                   0        -1e+06               
+   135 distribuir_llamadas[L3,D1]
+                                   0        -1e+06               
+   136 distribuir_llamadas[L3,D2]
+                             -998786        -1e+06               
+   137 distribuir_llamadas[L3,D3]
+                             -994600        -1e+06               
+   138 distribuir_llamadas[L3,D4]
+                                   0        -1e+06               
+   139 distribuir_llamadas[L3,D5]
+                                   0        -1e+06               
+   140 distribuir_llamadas[L4,D1]
+                             -995000        -1e+06               
+   141 distribuir_llamadas[L4,D2]
+                             -995829        -1e+06               
+   142 distribuir_llamadas[L4,D3]
+                                   0        -1e+06               
+   143 distribuir_llamadas[L4,D4]
+                             -999250        -1e+06               
+   144 distribuir_llamadas[L4,D5]
+                                   0        -1e+06               
+   145 distribuir_llamadas[L5,D1]
+                                   0        -1e+06               
+   146 distribuir_llamadas[L5,D2]
+                             -998885        -1e+06               
+   147 distribuir_llamadas[L5,D3]
+                                   0        -1e+06               
+   148 distribuir_llamadas[L5,D4]
+                                   0        -1e+06               
+   149 distribuir_llamadas[L5,D5]
+                             -994500        -1e+06               
+   150 distribuir_llamadas[L6,D1]
+                                   0        -1e+06               
+   151 distribuir_llamadas[L6,D2]
+                                   0        -1e+06               
+   152 distribuir_llamadas[L6,D3]
+                                   0        -1e+06               
+   153 distribuir_llamadas[L6,D4]
+                                   0        -1e+06               
+   154 distribuir_llamadas[L6,D5]
+                                   0        -1e+06               
+   155 distribuir_llamadas2[L1,D1]
+                                   0                          -0 
+   156 distribuir_llamadas2[L1,D2]
+                                   0                          -0 
+   157 distribuir_llamadas2[L1,D3]
+                                   0                          -0 
+   158 distribuir_llamadas2[L1,D4]
+                                   0                          -0 
+   159 distribuir_llamadas2[L1,D5]
+                                   0                          -0 
+   160 distribuir_llamadas2[L2,D1]
+                                   0                          -0 
+   161 distribuir_llamadas2[L2,D2]
+                                   0                          -0 
+   162 distribuir_llamadas2[L2,D3]
+                                   0                          -0 
+   163 distribuir_llamadas2[L2,D4]
+                             -993250                          -0 
+   164 distribuir_llamadas2[L2,D5]
+                                   0                          -0 
+   165 distribuir_llamadas2[L3,D1]
+                                   0                          -0 
+   166 distribuir_llamadas2[L3,D2]
+                             -998786                          -0 
+   167 distribuir_llamadas2[L3,D3]
+                             -994600                          -0 
+   168 distribuir_llamadas2[L3,D4]
+                                   0                          -0 
+   169 distribuir_llamadas2[L3,D5]
+                                   0                          -0 
+   170 distribuir_llamadas2[L4,D1]
+                             -995000                          -0 
+   171 distribuir_llamadas2[L4,D2]
+                             -995829                          -0 
+   172 distribuir_llamadas2[L4,D3]
+                                   0                          -0 
+   173 distribuir_llamadas2[L4,D4]
+                             -999250                          -0 
+   174 distribuir_llamadas2[L4,D5]
+                                   0                          -0 
+   175 distribuir_llamadas2[L5,D1]
+                                   0                          -0 
+   176 distribuir_llamadas2[L5,D2]
+                             -998885                          -0 
+   177 distribuir_llamadas2[L5,D3]
+                                   0                          -0 
+   178 distribuir_llamadas2[L5,D4]
+                                   0                          -0 
+   179 distribuir_llamadas2[L5,D5]
+                             -994500                          -0 
+   180 distribuir_llamadas2[L6,D1]
+                                   0                          -0 
+   181 distribuir_llamadas2[L6,D2]
+                                   0                          -0 
+   182 distribuir_llamadas2[L6,D3]
+                                   0                          -0 
+   183 distribuir_llamadas2[L6,D4]
+                                   0                          -0 
+   184 distribuir_llamadas2[L6,D5]
+                                   0                          -0 
+   185 establecer_minimo[L1,D1]
                                    0            -0               
-    40 distribuir_75[D2]
+   186 establecer_minimo[L1,D2]
                                    0            -0               
-    41 distribuir_75[D3]
+   187 establecer_minimo[L1,D3]
                                    0            -0               
-    42 distribuir_75[D4]
+   188 establecer_minimo[L1,D4]
                                    0            -0               
-    43 distribuir_75[D5]
+   189 establecer_minimo[L1,D5]
+                                   0            -0               
+   190 establecer_minimo[L2,D1]
+                                   0            -0               
+   191 establecer_minimo[L2,D2]
+                                   0            -0               
+   192 establecer_minimo[L2,D3]
+                                   0            -0               
+   193 establecer_minimo[L2,D4]
+                                6000            -0               
+   194 establecer_minimo[L2,D5]
+                                   0            -0               
+   195 establecer_minimo[L3,D1]
+                                   0            -0               
+   196 establecer_minimo[L3,D2]
+                                 564            -0               
+   197 establecer_minimo[L3,D3]
+                                4860            -0               
+   198 establecer_minimo[L3,D4]
+                                   0            -0               
+   199 establecer_minimo[L3,D5]
+                                   0            -0               
+   200 establecer_minimo[L4,D1]
+                                4500            -0               
+   201 establecer_minimo[L4,D2]
+                                3521            -0               
+   202 establecer_minimo[L4,D3]
+                                   0            -0               
+   203 establecer_minimo[L4,D4]
+                                   0            -0               
+   204 establecer_minimo[L4,D5]
+                                   0            -0               
+   205 establecer_minimo[L5,D1]
+                                   0            -0               
+   206 establecer_minimo[L5,D2]
+                                 465            -0               
+   207 establecer_minimo[L5,D3]
+                                   0            -0               
+   208 establecer_minimo[L5,D4]
+                                   0            -0               
+   209 establecer_minimo[L5,D5]
+                                4950            -0               
+   210 establecer_minimo[L6,D1]
+                                   0            -0               
+   211 establecer_minimo[L6,D2]
+                                   0            -0               
+   212 establecer_minimo[L6,D3]
+                                   0            -0               
+   213 establecer_minimo[L6,D4]
+                                   0            -0               
+   214 establecer_minimo[L6,D5]
                                    0            -0               
 
    No. Column name       Activity     Lower bound   Upper bound
 ------ ------------    ------------- ------------- -------------
-     1 tiempo_total_atencion[L1,D1]
-                    *           2400             0               
-     2 tiempo_total_atencion[L1,D2]
+     1 tiempo_total_atencion_nueva[L1,D1]
                     *              0             0               
-     3 tiempo_total_atencion[L1,D3]
+     2 tiempo_total_atencion_nueva[L1,D2]
                     *              0             0               
-     4 tiempo_total_atencion[L1,D4]
-                    *           7500             0               
-     5 tiempo_total_atencion[L1,D5]
+     3 tiempo_total_atencion_nueva[L1,D3]
                     *              0             0               
-     6 tiempo_total_atencion[L2,D1]
-                    *           2600             0               
-     7 tiempo_total_atencion[L2,D2]
-                    *           1900             0               
-     8 tiempo_total_atencion[L2,D3]
+     4 tiempo_total_atencion_nueva[L1,D4]
                     *              0             0               
-     9 tiempo_total_atencion[L2,D4]
+     5 tiempo_total_atencion_nueva[L1,D5]
                     *              0             0               
-    10 tiempo_total_atencion[L2,D5]
-                    *           5500             0               
-    11 tiempo_total_atencion[L3,D1]
+     6 tiempo_total_atencion_nueva[L2,D1]
                     *              0             0               
-    12 tiempo_total_atencion[L3,D2]
-                    *           4600             0               
-    13 tiempo_total_atencion[L3,D3]
+     7 tiempo_total_atencion_nueva[L2,D2]
+                    *              0             0               
+     8 tiempo_total_atencion_nueva[L2,D3]
+                    *              0             0               
+     9 tiempo_total_atencion_nueva[L2,D4]
+                    *           6750             0               
+    10 tiempo_total_atencion_nueva[L2,D5]
+                    *              0             0               
+    11 tiempo_total_atencion_nueva[L3,D1]
+                    *              0             0               
+    12 tiempo_total_atencion_nueva[L3,D2]
+                    *           1214             0               
+    13 tiempo_total_atencion_nueva[L3,D3]
                     *           5400             0               
-    14 tiempo_total_atencion[L3,D4]
+    14 tiempo_total_atencion_nueva[L3,D4]
                     *              0             0               
-    15 tiempo_total_atencion[L3,D5]
+    15 tiempo_total_atencion_nueva[L3,D5]
                     *              0             0               
     16 tiempo_total_atencion_nueva[L4,D1]
-                    *            500             0               
+                    *           5000             0               
     17 tiempo_total_atencion_nueva[L4,D2]
-                    *            650             0               
+                    *           4171             0               
     18 tiempo_total_atencion_nueva[L4,D3]
                     *              0             0               
     19 tiempo_total_atencion_nueva[L4,D4]
@@ -127,13 +445,13 @@ Objective:  CosteTotal = 1196700 (MINimum)
     21 tiempo_total_atencion_nueva[L5,D1]
                     *              0             0               
     22 tiempo_total_atencion_nueva[L5,D2]
-                    *              0             0               
+                    *           1115             0               
     23 tiempo_total_atencion_nueva[L5,D3]
-                    *            540             0               
+                    *              0             0               
     24 tiempo_total_atencion_nueva[L5,D4]
                     *              0             0               
     25 tiempo_total_atencion_nueva[L5,D5]
-                    *            550             0               
+                    *           5500             0               
     26 tiempo_total_atencion_nueva[L6,D1]
                     *              0             0               
     27 tiempo_total_atencion_nueva[L6,D2]
@@ -144,17 +462,88 @@ Objective:  CosteTotal = 1196700 (MINimum)
                     *              0             0               
     30 tiempo_total_atencion_nueva[L6,D5]
                     *              0             0               
-    31 establecer_nuevo[L4]
+    31 llamadas_asignadas[L4]
                     *              1             0             1 
-    32 establecer_nuevo[L5]
+    32 llamadas_asignadas[L5]
                     *              1             0             1 
-    33 establecer_nuevo[L6]
+    33 llamadas_asignadas[L6]
+                    *              0             0             1 
+    34 llamadas_asignadas[L2]
                     *              1             0             1 
-    34 y[D1]        *              1             0             1 
-    35 y[D2]        *              1             0             1 
-    36 y[D3]        *              1             0             1 
-    37 y[D4]        *              1             0             1 
-    38 y[D5]        *              1             0             1 
+    35 llamadas_asignadas[L3]
+                    *              1             0             1 
+    36 llamadas_asignadas[L1]
+                    *              0             0             1 
+    37 atencion_llamada[D1]
+                    *              0             0             1 
+    38 atencion_llamada[D2]
+                    *              0             0             1 
+    39 atencion_llamada[D3]
+                    *              0             0             1 
+    40 atencion_llamada[D4]
+                    *              1             0             1 
+    41 atencion_llamada[D5]
+                    *              0             0             1 
+    42 distribucion[L1,D1]
+                    *              0             0             1 
+    43 distribucion[L1,D2]
+                    *              0             0             1 
+    44 distribucion[L1,D3]
+                    *              0             0             1 
+    45 distribucion[L1,D4]
+                    *              0             0             1 
+    46 distribucion[L1,D5]
+                    *              0             0             1 
+    47 distribucion[L2,D1]
+                    *              0             0             1 
+    48 distribucion[L2,D2]
+                    *              0             0             1 
+    49 distribucion[L2,D3]
+                    *              0             0             1 
+    50 distribucion[L2,D4]
+                    *              1             0             1 
+    51 distribucion[L2,D5]
+                    *              0             0             1 
+    52 distribucion[L3,D1]
+                    *              0             0             1 
+    53 distribucion[L3,D2]
+                    *              1             0             1 
+    54 distribucion[L3,D3]
+                    *              1             0             1 
+    55 distribucion[L3,D4]
+                    *              0             0             1 
+    56 distribucion[L3,D5]
+                    *              0             0             1 
+    57 distribucion[L4,D1]
+                    *              1             0             1 
+    58 distribucion[L4,D2]
+                    *              1             0             1 
+    59 distribucion[L4,D3]
+                    *              0             0             1 
+    60 distribucion[L4,D4]
+                    *              1             0             1 
+    61 distribucion[L4,D5]
+                    *              0             0             1 
+    62 distribucion[L5,D1]
+                    *              0             0             1 
+    63 distribucion[L5,D2]
+                    *              1             0             1 
+    64 distribucion[L5,D3]
+                    *              0             0             1 
+    65 distribucion[L5,D4]
+                    *              0             0             1 
+    66 distribucion[L5,D5]
+                    *              1             0             1 
+    67 distribucion[L6,D1]
+                    *              0             0             1 
+    68 distribucion[L6,D2]
+                    *              0             0             1 
+    69 distribucion[L6,D3]
+                    *              0             0             1 
+    70 distribucion[L6,D4]
+                    *              0             0             1 
+    71 distribucion[L6,D5]
+                    *              0             0             1 
 
 Integer feasibility conditions:
 
