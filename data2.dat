@@ -18,11 +18,11 @@ param tiempo_llegada_nueva : D1 D2 D3 D4 D5 :=
         L6 55 35 20 30 30;
 
 param llamadas_totales :=
-    D1 5000
-    D2 6500
-    D3 5400
-    D4 7500
-    D5 5500;
+        D1 5000
+        D2 6500
+        D3 5400
+        D4 7500
+        D5 5500;
 
 param max_llamadas_parking := 10000;
 param coste_gasolina := 2;
